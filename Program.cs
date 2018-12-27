@@ -13,7 +13,9 @@ namespace aoc2018
             //Day05.Run();
             //Day06.Run();
             //Day07.Run();
-            Day08.Run();
+            //Day08.Run();
+            //Day23.Run();
+            Day24.Run();
 
             Console.ReadLine();
         }
