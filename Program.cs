@@ -14,7 +14,8 @@ namespace aoc2018
             //Day06.Run();
             //Day07.Run();
             //Day08.Run();
-            Day22.Run();
+            Day16.Run();
+            //Day22.Run();
             //Day23.Run();
             //Day24.Run();
             //Day25.Run();
