@@ -313,14 +313,6 @@ namespace aoc2018
     }
 
 
-    public static class StringExtensions
-    {
-        // Cut a string into two parts (before, after) at index i - character at index is is not in before, after
-        public static (string, string) SplitAt(this string s, int i)
-            => (s.Substring(0, i), s.Substring(i + 1));
-    }
-
-
     [TestFixture]
     internal class Day20Tests
     {
@@ -357,43 +349,6 @@ namespace aoc2018
         {
             var res = Day20.FindFurthestRoom("^WSSEESWWWNW(S|NENNEEEENN(ESSSSW(NWSW|SSEN)|WSWWN(E|WWS(E|SS))))$");
             Assert.AreEqual(31, res);
-        }
-    }
-
-
-    [TestFixture]
-    internal class StringExtensionsText
-    {
-        [Test]
-        public void SplitAt_Should_CutStringInTwo()
-        {
-            var (s1, s2) = "ABC|DEF".SplitAt(3);
-            Assert.AreEqual(s1, "ABC");
-            Assert.AreEqual(s2, "DEF");
-        }
-
-        [Test]
-        public void SplitAt_Should_ReturnEmptyS1StringIfCutAtBeginning()
-        {
-            var (s1, s2) = "|ABCDEF".SplitAt(0);
-            Assert.AreEqual(s1, string.Empty);
-            Assert.AreEqual(s2, "ABCDEF");
-        }
-
-        [Test]
-        public void SplitAt_Should_ReturnEmptyS2StringIfCutAtEnd()
-        {
-            var (s1, s2) = "ABCDEF|".SplitAt(6);
-            Assert.AreEqual(s1, "ABCDEF");
-            Assert.AreEqual(s2, string.Empty);
-        }
-
-        [Test]
-        public void SplitAt_Should_ReturnEmptyStringsIfCutAtOnlyCharacter()
-        {
-            var (s1, s2) = "|".SplitAt(0);
-            Assert.AreEqual(s1, string.Empty);
-            Assert.AreEqual(s2, string.Empty);
         }
     }
 }
